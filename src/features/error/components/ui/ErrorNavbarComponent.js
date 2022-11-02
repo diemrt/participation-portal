@@ -1,10 +1,9 @@
-import LogoComponent from "../../../../components/ui/LogoComponent";
 
-export default function ErrorNavbarComponent(){
+export default function ErrorNavbarComponent(props){
 
     return (
         <div className="flex flex-col items-end">
-            <LogoComponent path="/images/logo.png" />
+            {props.children}
         </div>
     );
 }
