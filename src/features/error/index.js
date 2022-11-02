@@ -1,4 +1,8 @@
 import { useRouteError } from "react-router-dom";
+import ContainerComponent from "../../components/ui/ContainerComponent";
+import PrimaryHeader from "../../components/ui/PrimaryHeader";
+import ErrorImageComponent from "./components/ui/ErrorImageComponent";
+import ErrorNavbarComponent from "./components/ui/ErrorNavbarComponent";
 
 export default function ErrorFeature()
 {
@@ -6,12 +10,13 @@ export default function ErrorFeature()
     console.error(error);
     
     return (
-        <div id="error-page">
-          <h1>Oops!</h1>
-          <p>Sorry, an unexpected error has occurred.</p>
-          <p>
-            <i>{error.statusText || error.message}</i>
-          </p>
-        </div>
+        <ContainerComponent>
+          <ErrorNavbarComponent />
+          <ErrorImageComponent path="/images/error.png"/>
+          <div id="error-page">
+            <PrimaryHeader className="text-center">Oops!</PrimaryHeader>
+            <p className="text-center">Qualcosa è andato storto</p>
+          </div>
+        </ContainerComponent>
       );
 }

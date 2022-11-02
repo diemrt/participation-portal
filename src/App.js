@@ -1,11 +1,4 @@
-import React, { Component } from "react";
-
-class App extends Component
+export default function App()
 {
-
-  render(){
-    return <h1>Participation Portal</h1>;
-  }
+  return <h1>Participation Portal</h1>;
 }
-
-export default App;
