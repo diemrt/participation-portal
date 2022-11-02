@@ -16,8 +16,8 @@ export default function ErrorFeature()
           <ErrorNavbarComponent>
             <img alt="logo" className="h-12 w-12 saturate-0 rotate-6" src="/images/logo.png" loading="lazy"></img>
           </ErrorNavbarComponent>
-          <ErrorImageComponent path="/images/error.png"/>
           <div className="flex flex-col items-center" id="error-page">
+            <ErrorImageComponent path="/images/error.png"/>
             <PrimaryHeader className="text-center">Oops!</PrimaryHeader>
             <p className="text-center">Qualcosa è andato storto</p>
             <OutlinePrimaryLinkComponent link="/" iconName="refresh" textDescription="Ricarica"></OutlinePrimaryLinkComponent>
