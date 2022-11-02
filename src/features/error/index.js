@@ -1,5 +1,5 @@
 import { useRouteError } from "react-router-dom";
-import OutlinePrimaryButtonComponent from "../../components/ui/OutlinePrimaryButtonComponent";
+import OutlinePrimaryLinkComponent from "../../components/ui/OutlinePrimaryLinkComponent";
 import ContainerComponent from "../../components/ui/ContainerComponent";
 import PrimaryHeader from "../../components/ui/PrimaryHeader";
 import ErrorImageComponent from "./components/ui/ErrorImageComponent";
@@ -20,7 +20,7 @@ export default function ErrorFeature()
           <div className="flex flex-col items-center" id="error-page">
             <PrimaryHeader className="text-center">Oops!</PrimaryHeader>
             <p className="text-center">Qualcosa è andato storto</p>
-            <OutlinePrimaryButtonComponent iconName="refresh" textDescription="Ricarica"></OutlinePrimaryButtonComponent>
+            <OutlinePrimaryLinkComponent link="/" iconName="refresh" textDescription="Ricarica"></OutlinePrimaryLinkComponent>
           </div>
         </ContainerComponent>
       );
