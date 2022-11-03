@@ -1,4 +1,4 @@
-export default function PrimaryHeader(props)
+export default function PrimaryHeader({children, className})
 {
-    return <h1 className={`text-4xl font-medium mb-5 ${props.className}`}>{props.children}</h1>
+    return <h1 className={`text-4xl font-medium mb-5 ${className}`}>{children}</h1>
 }
