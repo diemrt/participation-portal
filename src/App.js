@@ -1,10 +1,13 @@
 import { useState } from "react";
 import HomePage from "./pages/HomePage";
-import LoginPage from "./pages/LoginPage";
+import AuthComponent from "./components/ui/AuthComponent"
 
 export default function App()
 {
-  let [user, setUser] = useState({isNotSet: true});
-
-  return user.isNotSet ? <LoginPage setUser={setUser}/> : <HomePage />;
+  let [user, setUser] = useState(null);
+  return (
+     <AuthComponent user={user} setUser={setUser}>
+      <HomePage />
+     </AuthComponent>
+  );
 }

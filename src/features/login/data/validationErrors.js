@@ -1,0 +1,1 @@
+export const requeredField = "* Campo obbligatorio."
