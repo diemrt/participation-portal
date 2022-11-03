@@ -1,4 +1,6 @@
-export default function LoginPage(){
+import LoginFeature from "../features/login";
 
-    return <h1>Login page</h1>;
+export default function LoginPage({setUser}){
+
+    return <LoginFeature setUser={setUser} />;
 }

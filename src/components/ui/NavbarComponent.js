@@ -1,5 +1,5 @@
 
-export default function ErrorNavbarComponent(props){
+export default function NavbarComponent(props){
 
     return (
         <div className="flex flex-col items-end">
