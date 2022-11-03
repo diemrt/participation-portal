@@ -5,13 +5,14 @@ import {
   RouterProvider
 } from "react-router-dom";
 import './assets/css/index.css';
-import ErrorPage from './pages/Error';
+import App from './App';
+import ErrorPage from './pages/ErrorPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <ErrorPage />,
+    element: <App />,
     errorElement: <ErrorPage />
   },
 ]);
