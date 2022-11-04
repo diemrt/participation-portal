@@ -11,12 +11,16 @@ export default function LoginFormComponent({setUser})
     let [passwordLabel, setPasswordLabel] = useState("");
 
     return (
-        <form className="flex flex-col mt-20" onSubmit={e => submitWithValitadion(e, email, setEmailLabel, password, setPasswordLabel, setUser)}>
+        <form className="flex flex-col items-center mt-20" onSubmit={e => submitWithValitadion(e, email, setEmailLabel, password, setPasswordLabel, setUser)}>
             <InputComponent type="email" placeholder="Email" label={emailLabel} setLabel={setEmailLabel} setValue={setEmail}/>
             <InputComponent type="password" placeholder="Password" label={passwordLabel} setLabel={setPasswordLabel} setValue={setPassword} />
 
-
-            <button type="submit" className="rounded p-2 bg-slate-800 hover:bg-slate-900 text-white mt-10 mb:mt-5">Submit</button>
+            <button type="submit" className="mt-12 flex flex-row justify-center content-center text-white bg-orange-500 w-40 rounded-lg p-3 font-medium hover:text-orange-100">
+                <span className="material-symbols-outlined pr-2">
+                    login
+                </span>
+                Accedi
+            </button>
         </form>
     );
 }
