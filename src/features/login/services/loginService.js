@@ -1,12 +1,5 @@
 import { requeredField } from "../data/validationErrors";
-
-function setUserService(email, password, setUser)
-{
-    setUser({
-        email: email,
-        password: password
-    })
-}
+import { firebaseSignIn } from "../../../services/FirebaseService";
 
 export function inputValidation(value, setLabel){
     if(typeof value === 'string' && value.length === 0){
@@ -18,8 +11,11 @@ export function inputValidation(value, setLabel){
     }
 }
 
-export function submitWithValitadion(event, email, setEmailLabel, password, setPasswordLabel, setUser)
+export function submitWithValitadion(event, email, setEmailLabel, password, setPasswordLabel, setUser, setError)
 {
+    let setUserLogged = (user) => setUser({email: user.email});
+    let setErrorLabel = (message) => setError(`Errore di autenticazione: ${message}`);
+
     event.preventDefault();
     let validations = [];
 
@@ -30,5 +26,5 @@ export function submitWithValitadion(event, email, setEmailLabel, password, setP
             return false
     }
     
-    setUserService(email, password, setUser);
+    firebaseSignIn(email, password, setUserLogged, setErrorLabel);
 }

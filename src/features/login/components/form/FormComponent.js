@@ -4,6 +4,8 @@ import InputComponent from "./InputComponent";
 
 export default function LoginFormComponent({setUser})
 {
+    let [error, setError] = useState("");
+
     let [email, setEmail] = useState("");
     let [emailLabel, setEmailLabel] = useState("");
 
@@ -11,7 +13,8 @@ export default function LoginFormComponent({setUser})
     let [passwordLabel, setPasswordLabel] = useState("");
 
     return (
-        <form className="flex flex-col items-center mt-20" onSubmit={e => submitWithValitadion(e, email, setEmailLabel, password, setPasswordLabel, setUser)}>
+        <form className="flex flex-col items-center mt-20" onSubmit={e => submitWithValitadion(e, email, setEmailLabel, password, setPasswordLabel, setUser, setError)}>
+            <small className="text-red-500 mb-5 font-bold w-full text-left">{error}</small>
             <InputComponent type="email" placeholder="Email" label={emailLabel} setLabel={setEmailLabel} setValue={setEmail}/>
             <InputComponent type="password" placeholder="Password" label={passwordLabel} setLabel={setPasswordLabel} setValue={setPassword} />
 
